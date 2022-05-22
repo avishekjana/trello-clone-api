@@ -3,4 +3,5 @@ class Board < ApplicationRecord
   friendly_id :name, use: :slugged
 
   belongs_to :workspace
+  has_many :tasks
 end
