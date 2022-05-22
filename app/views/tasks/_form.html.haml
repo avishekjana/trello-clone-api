@@ -1,0 +1,28 @@
+= form_for @task do |f|
+  - if @task.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
+      %ul
+        - @task.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :board
+    = f.text_field :board
+  .field
+    = f.label :state
+    = f.number_field :state
+  .field
+    = f.label :due_date
+    = f.text_field :due_date
+  .field
+    = f.label :member_id
+    = f.number_field :member_id
+  .actions
+    = f.submit 'Save'

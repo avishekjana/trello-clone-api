@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Task:
+  = @comment.task
+%p
+  %b Content:
+  = @comment.content
+%p
+  %b Member:
+  = @comment.member
+
+= link_to 'Edit', edit_comment_path(@comment)
+\|
+= link_to 'Back', comments_path
